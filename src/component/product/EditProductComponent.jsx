@@ -24,7 +24,7 @@ class EditProductComponent extends Component {
     loadProduct() {
         ApiService.fetchProductById(window.localStorage.getItem("productId"))
             .then((res) => {
-                let product = res.data.result;
+                let product = res.data.data[0];
                 this.setState({
                 id: product.id,
                 name: product.name,

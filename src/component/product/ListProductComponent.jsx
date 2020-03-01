@@ -22,7 +22,7 @@ class ListProductComponent extends Component {
     reloadProductList() {
         ApiService.fetchProducts()
             .then((res) => {
-                this.setState({product: res.data.result})
+                this.setState({products: res.data.data})
             });
     }
 
@@ -54,7 +54,7 @@ class ListProductComponent extends Component {
                     <thead>
                         <tr>
                             <th className="hidden">Id</th>
-                            <th>name</th>
+                            <th>Name</th>
                             <th>Brand</th>
                             <th>Price</th>
                             <th>Currency</th>
